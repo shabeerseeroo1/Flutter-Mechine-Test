@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mechine_test/utils/app_colors.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -21,7 +22,7 @@ class SplashScreen extends StatelessWidget {
     return Text(
       "Flutter Test",
       style: GoogleFonts.roboto(
-          color: Colors.grey, fontSize: 35, fontWeight: FontWeight.w900),
+          color: AppColors.primaryColor, fontSize: 35, fontWeight: FontWeight.w900),
     );
   }
 }
