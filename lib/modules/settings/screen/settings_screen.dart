@@ -24,6 +24,7 @@ class SettingsScreen extends GetView<SettingsController> {
   CustomAppbar buildCustomAppbar() {
     return CustomAppbar(
       title: AppStrings.settingTitle,
+      isHasLeading: true,
       onLeadingPress: () {
         Get.back();
       },

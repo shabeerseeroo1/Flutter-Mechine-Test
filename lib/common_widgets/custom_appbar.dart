@@ -3,31 +3,36 @@ import 'package:flutter/material.dart';
 class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppbar(
       {required this.title,
-      required this.onLeadingPress,
+       this.onLeadingPress,
       this.onSettingPress,
       this.backGroundColor,
       this.isHasSettings = false,
+      this.isHasLeading = false,
+      this.isCenterTitle = false,
       Key? key})
       : super(key: key);
   final Color? backGroundColor;
   final String title;
   final bool isHasSettings;
-  final Function onLeadingPress;
+  final bool isCenterTitle;
+  final bool isHasLeading;
+  final Function? onLeadingPress;
   final Function? onSettingPress;
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
       backgroundColor: backGroundColor ?? Colors.white,
-      title: Text(title),
-      leading: IconButton(
+      title: Text(title,style: const TextStyle(fontSize: 18),),
+      leadingWidth: isHasLeading?50:15,
+      leading: isHasLeading?IconButton(
           icon: const Icon(
             Icons.arrow_back_ios,
             size: 20,
           ),
           onPressed: () {
-            onLeadingPress();
-          }),
+            onLeadingPress!();
+          }):Container(),
       actions: [
         isHasSettings
             ? IconButton(
