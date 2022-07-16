@@ -30,9 +30,6 @@ class ProductScreen extends GetView<ProductController> {
     return CustomAppbar(
       title:AppStrings.productTitle ,
       backGroundColor: AppColors.primaryColor,
-      onLeadingPress: (){
-        Get.back();
-      },
       isHasSettings: true,
       onSettingPress: (){
         Get.toNamed(Routes.settingsScreen);
