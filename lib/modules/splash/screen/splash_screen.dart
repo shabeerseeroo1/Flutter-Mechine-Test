@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mechine_test/utils/app_colors.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class SplashScreen extends StatelessWidget {
+import '../../../contstants/app_strings.dart';
+import '../controller/splash_controller.dart';
+
+class SplashScreen extends GetView<SplashController> {
   const SplashScreen({Key? key}) : super(key: key);
 
   @override
@@ -20,7 +24,7 @@ class SplashScreen extends StatelessWidget {
 
   Text _buildText() {
     return Text(
-      "Flutter Test",
+     AppStrings.splashTitle,
       style: GoogleFonts.roboto(
           color: AppColors.primaryColor, fontSize: 35, fontWeight: FontWeight.w900),
     );

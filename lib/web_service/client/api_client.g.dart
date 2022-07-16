@@ -9,7 +9,7 @@ part of 'api_client.dart';
 // ignore_for_file: unnecessary_brace_in_string_interps
 
 class _ApiClient implements ApiClient {
-  _ApiClient(this._dio, {this.baseUrl}) {
+  _ApiClient(this._dio) {
     baseUrl ??= 'https://fakestoreapi.com/';
   }
 
@@ -19,16 +19,16 @@ class _ApiClient implements ApiClient {
 
   @override
   Future<dynamic> getProducts() async {
-    const _extra = <String, dynamic>{};
+    const extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{};
-    final _data = <String, dynamic>{};
-    final _result = await _dio.fetch(_setStreamType<dynamic>(
-        Options(method: 'GET', headers: _headers, extra: _extra)
+    final headers = <String, dynamic>{};
+    final data = <String, dynamic>{};
+    final result = await _dio.fetch(_setStreamType<dynamic>(
+        Options(method: 'GET', headers: headers, extra: extra)
             .compose(_dio.options, 'products',
-                queryParameters: queryParameters, data: _data)
+                queryParameters: queryParameters, data: data)
             .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = _result.data;
+    final value = result.data;
     return value;
   }
 

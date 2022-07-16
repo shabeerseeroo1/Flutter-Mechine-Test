@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-extension CommonWidget on Widget {
-  Padding paddingSymmetric({double? horizontal, double? vertical}) {
+extension CustomWidget on Widget {
+  Padding paddingCustom({double? horizontal, double? vertical}) {
     return Padding(
       padding: EdgeInsets.symmetric(
         horizontal: horizontal ?? 0.0,
@@ -11,7 +11,7 @@ extension CommonWidget on Widget {
     );
   }
 
-  Padding paddingOnly(
+  Padding paddingSpe(
       {double? top, double? bottom, double? right, double? left}) {
     return Padding(
       padding: EdgeInsets.only(
