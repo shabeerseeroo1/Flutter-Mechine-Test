@@ -16,7 +16,8 @@ class ProductController extends GetxController {
 
   getProducts() {
     _productProvider.getProducts().then((value) {
-      mProducts.value = value;
+      mProducts.clear();
+      mProducts.addAll(value);
       isLoading(false);
     });
   }

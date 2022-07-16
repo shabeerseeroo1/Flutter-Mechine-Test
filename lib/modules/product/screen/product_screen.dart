@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_mechine_test/contsants/app_strings.dart';
+import 'package:flutter_mechine_test/common_widgets/custom_appbar.dart';
+import 'package:flutter_mechine_test/extension/common_widget.dart';
 import 'package:flutter_mechine_test/modules/product/controller/product_controller.dart';
 import 'package:flutter_mechine_test/modules/product/widget/product_list_item.dart';
 import 'package:flutter_mechine_test/modules/product/widget/product_sheet.dart';
+import 'package:flutter_mechine_test/routes/app_pages.dart';
 import 'package:flutter_mechine_test/utils/app_colors.dart';
 import 'package:flutter_mechine_test/utils/bottom_sheet_utils.dart';
 import 'package:flutter_mechine_test/utils/loader_view.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:get/get.dart';
+
+import '../../../contstants/app_strings.dart';
 
 class ProductScreen extends GetView<ProductController> {
   const ProductScreen({Key? key}) : super(key: key);
@@ -15,19 +19,25 @@ class ProductScreen extends GetView<ProductController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: AppColors.primaryColor,
-        title: const Text(AppStrings.productTitle),
-        leading: IconButton(
-            icon: const Icon(
-              Icons.arrow_back_ios,
-              size: 20,
-            ),
-            onPressed: () {}),
-      ),
+      appBar: buildCustomAppbar(),
       body: Obx(
-        () => _bodyView().paddingSymmetric(horizontal: 5, vertical: 8),
+        () => _bodyView().paddingCustom(horizontal: 5, vertical: 8)
       ),
+    );
+  }
+
+  CustomAppbar buildCustomAppbar() {
+    return CustomAppbar(
+      title:AppStrings.productTitle ,
+      backGroundColor: AppColors.primaryColor,
+      onLeadingPress: (){
+        Get.back();
+      },
+      isHasSettings: true,
+      onSettingPress: (){
+        Get.toNamed(Routes.settingsScreen);
+      },
+
     );
   }
 

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_mechine_test/modules/product/model/rating_info.dart';
 import 'package:flutter_mechine_test/modules/product/widget/rating_widget.dart';
 import 'package:flutter_mechine_test/utils/app_colors.dart';
 import 'package:google_fonts/google_fonts.dart';

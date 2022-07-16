@@ -23,7 +23,6 @@ class ApiService {
       var jsonString = "{\"product_list\": ${jsonEncode(dynamicData)}}";
       response = ProductInfo.fromJson(json.decode(jsonString));
     } catch (e) {
-      print('Error is $e');
       return BaseModel()
         ..setException(ErrorHandler.withErrorAndCode(error: e as DioError));
     }

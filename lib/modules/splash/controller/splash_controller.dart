@@ -16,5 +16,5 @@ class SplashController extends GetxController {
     });
   }
 
-  navigateToProducts() => Get.toNamed(Routes.productScreen);
+  navigateToProducts() => Get.offAllNamed(Routes.productScreen);
 }

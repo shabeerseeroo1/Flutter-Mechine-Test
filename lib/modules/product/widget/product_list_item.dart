@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mechine_test/extension/common_widget.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../model/product_list_info.dart';
 
 class ProductListItem extends StatelessWidget {
   const ProductListItem(
@@ -22,7 +21,7 @@ class ProductListItem extends StatelessWidget {
     return Card(
       elevation: 2,
       child: buildColumn()
-          .paddingOnly(left: 8.0, right: 8.0, bottom: 5.0, top: 2.0),
+          .paddingSpe(left: 8.0, right: 8.0, bottom: 5.0, top: 2.0),
     );
   }
 
