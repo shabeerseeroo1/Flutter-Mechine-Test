@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mechine_test/modules/splash/bindings/splash_binding.dart';
 import 'package:get/get.dart';
 
 import 'routes/app_pages.dart';
@@ -14,6 +15,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Test',
       debugShowCheckedModeBanner: false,
       initialRoute: AppPages.initial,
+      initialBinding: SplashBinding(),
       getPages: AppPages.routes,
     );
   }
