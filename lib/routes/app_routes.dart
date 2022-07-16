@@ -1,14 +1,15 @@
 part of 'app_pages.dart';
-// DO NOT EDIT. This is code generated via package:get_cli/get_cli.dart
 
 abstract class Routes {
   Routes._();
 
   static const splashScreen = _Paths.splashScreen;
+  static const productScreen = _Paths.productScreen;
 
 }
 abstract class _Paths {
 
   static const splashScreen = "/splash-screen";
+  static const productScreen = "/product-screen";
 
 }

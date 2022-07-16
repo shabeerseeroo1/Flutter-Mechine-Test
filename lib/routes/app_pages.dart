@@ -1,3 +1,6 @@
+import 'package:flutter_mechine_test/modules/product/bindings/product_binding.dart';
+import 'package:flutter_mechine_test/modules/product/screen/product_screen.dart';
+import 'package:flutter_mechine_test/modules/splash/bindings/splash_binding.dart';
 import 'package:get/get.dart';
 
 import '../modules/splash/screen/splash_screen.dart';
@@ -14,6 +17,12 @@ class AppPages {
     GetPage(
       name: _Paths.splashScreen,
       page: () => const SplashScreen(),
+      binding: SplashBinding()
+    ),
+    GetPage(
+        name: _Paths.productScreen,
+        page: () => const ProductScreen(),
+        binding: ProductBinding()
     ),
 
   ];
